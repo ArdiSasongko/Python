@@ -1,28 +1,36 @@
-#latihan input
+print("Latihan Program Basic Python")
 
-panjang = int(input("Masukan panjang : "))
-lebar = int(input("Masukan lebar : "))
+user = {
+    'name' : 'user123',
+    'password' : '123',
+    'money' : 24000,
+}
 
-result = panjang*lebar
+print('Silahkan Login dahulu')
 
-#nested if-else
-if result >= 100 :
-    print(str(result) + " besar dari 100")
-    if result % 2 == 0 :
-        print("Bilangan Genap")
+while True : 
+    name = input(str("Masukan name : "))
+    password = input(str("Masukan password : "))
+    if name != user['name'] :
+        print("Name salah")
+    elif password != user['password'] :
+        print("Password Salah")
+    elif name == user['name'] and password == user['password']:
+        print("Haloo ", user['name'])
+        print("Saldo anda : Rp", user['money'])
+        print("Apakah anda ingin menambahkan saldo ?")
+        y = input(str("Y/N : "))
+        if y == 'Y' or y == 'y' :
+            print("Masukan jumlah saldo")
+            saldo = input("Jumlah saldo : ")
+            saldo = int(saldo)
+            total = saldo + user['money']
+            user['money']=total
+            print("Saldo terbaru : Rp", user["money"])
+            print("Terima Kasih")
+        else :
+            print("Terima Kasih")
+        break
     else :
-        print("Bilangan Ganjil")
-elif result >= 20 :
-    print(str(result) +" besar dari 20")
-    if result % 2 == 0 :
-        print("Bilangan Genap")
-    else :
-        print("Bilangan Ganjil")
-else :
-    print(str(result) +" Kecil dari 20")
-    if result % 2 == 0 :
-        print("Bilangan Genap")
-    else :
-        print("Bilangan Ganjil")
-
-
+        print("Anda tidak terdaftar")
+        break
